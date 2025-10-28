@@ -37,6 +37,14 @@ public class TenisTest
             if (diferencia >= 2) return "Jugador 1 gana";
             if (diferencia <= -2) return "Jugador 2 gana";
         }
+        
+        if (jugador1 >= 3 || jugador2 >= 3)
+        {
+            int diferencia = jugador1 - jugador2;
+            
+            if (diferencia == 1) return "Ventaja jugador 1";
+            if (diferencia == -1) return "Ventaja jugador 2";
+        }
 
         return "";
     }
