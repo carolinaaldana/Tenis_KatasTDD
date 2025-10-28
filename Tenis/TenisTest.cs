@@ -52,8 +52,6 @@ public class TenisTest
 
     private string CalcularPuntaje(int puntosJugador1, int puntosJugador2)
     {
-        string[] valores = { "Amor", "Quince", "Treinta", "Cuarenta" };
-        
         if (puntosJugador1 >= 4 || puntosJugador2 >= 4)
         {
             int diferencia = puntosJugador1 - puntosJugador2;
@@ -63,14 +61,26 @@ public class TenisTest
         }
         
         if (puntosJugador1 >= 3 || puntosJugador2 >= 3)
-        {
-            int diferencia = puntosJugador1 - puntosJugador2;
-            
-            if (diferencia == 1) return "Ventaja jugador 1";
-            if (diferencia == -1) return "Ventaja jugador 2";
-            return "Iguales";
-        }
+            return ObtenerResultadoDeuce(puntosJugador1, puntosJugador2);
         
+        return ObtenerPuntajeNormal(puntosJugador1, puntosJugador2);
+    }
+    
+    private string ObtenerResultadoDeuce(int puntosJugador1, int puntosJugador2)
+    {
+        int diferencia = puntosJugador1 - puntosJugador2;
+        return diferencia switch
+        {
+            1 => "Ventaja jugador 1",
+            -1 => "Ventaja jugador 2",
+            _ => "Iguales"
+        };
+    }
+    
+    private string ObtenerPuntajeNormal(int puntosJugador1, int puntosJugador2)
+    {
+        string[] valores = { "Amor", "Quince", "Treinta", "Cuarenta" };
         return $"{valores[puntosJugador1]}-{valores[puntosJugador2]}";
     }
+    
 }
