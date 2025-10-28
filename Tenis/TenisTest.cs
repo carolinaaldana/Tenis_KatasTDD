@@ -37,6 +37,18 @@ public class TenisTest
         // Assert
         Assert.Equal(esperado, resultado);
     }
+    
+    [Theory]
+    [InlineData(0, 1, "Amor-Quince")]
+    [InlineData(1, 2, "Quince-Treinta")]
+    public void SiEsJuegoNormal(int puntosJugador1, int puntosJugador2, string esperado )
+    {
+        // Act
+        var resultado = CalcularPuntaje(puntosJugador1, puntosJugador2);
+        
+        // Assert
+        Assert.Equal(esperado, resultado);
+    }
 
     private string CalcularPuntaje(int puntosJugador1, int puntosJugador2)
     {
