@@ -52,6 +52,8 @@ public class TenisTest
 
     private string CalcularPuntaje(int puntosJugador1, int puntosJugador2)
     {
+        string[] valores = { "Amor", "Quince", "Treinta", "Cuarenta" };
+        
         if (puntosJugador1 >= 4 || puntosJugador2 >= 4)
         {
             int diferencia = puntosJugador1 - puntosJugador2;
@@ -68,6 +70,7 @@ public class TenisTest
             if (diferencia == -1) return "Ventaja jugador 2";
             return "Iguales";
         }
-        return "";
+        
+        return $"{valores[puntosJugador1]}-{valores[puntosJugador2]}";
     }
 }
