@@ -54,7 +54,7 @@ public class TenisTest
             
             if (diferencia == 1) return "Ventaja jugador 1";
             if (diferencia == -1) return "Ventaja jugador 2";
-            if (diferencia == 0) return "Iguales";
+            return "Iguales";
         }
         return "";
     }
