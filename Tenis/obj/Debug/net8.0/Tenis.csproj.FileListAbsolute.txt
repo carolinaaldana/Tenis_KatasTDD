@@ -97,3 +97,4 @@ C:\Users\Maria.aldana\RiderProjects\Tenis\Tenis\obj\Debug\net8.0\refint\Tenis.dl
 C:\Users\Maria.aldana\RiderProjects\Tenis\Tenis\obj\Debug\net8.0\Tenis.pdb
 C:\Users\Maria.aldana\RiderProjects\Tenis\Tenis\obj\Debug\net8.0\Tenis.genruntimeconfig.cache
 C:\Users\Maria.aldana\RiderProjects\Tenis\Tenis\obj\Debug\net8.0\ref\Tenis.dll
+C:\Users\Maria.aldana\RiderProjects\Tenis\Tenis\obj\Debug\net8.0\Tenis.sourcelink.json

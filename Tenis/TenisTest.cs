@@ -17,6 +17,12 @@ public class TenisTest
 
     private string CalcularPuntaje(int jugador1, int jugador2)
     {
-        throw new NotImplementedException();
+        if (jugador1 >= 4 || jugador2 >= 4)
+        {
+            if (jugador1 - jugador2 >= 2) return "Jugador 1 gana";
+            if (jugador2 - jugador1 >= 2) return "Jugador 2 gana";
+        }
+
+        return "";
     }
 }
