@@ -14,6 +14,19 @@ public class TenisTest
         Assert.Equal(esperado, resultado);
 
     }
+    
+    [Theory]
+    [InlineData(5, 4, "Ventaja jugador 1")]
+    [InlineData(5, 6, "Ventaja jugador 2")]
+    public void Si_CadaJugadorTieneAlMenos3_Y_UnoDeLosOponentesTiene1Mas_Ventaja(int jugador1, int jugador2, string esperado )
+    {
+        // Act
+        var resultado = CalcularPuntaje(jugador1, jugador2);
+        
+        // Assert
+        Assert.Equal(esperado, resultado);
+
+    }
 
     private string CalcularPuntaje(int jugador1, int jugador2)
     {

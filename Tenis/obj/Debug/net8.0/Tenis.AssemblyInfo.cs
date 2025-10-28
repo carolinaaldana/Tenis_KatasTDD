@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tenis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d518d7f73be24fe1b80f313a4994d18025603485")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e62b312f387633c7d658a511de6e56c867c1577")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tenis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tenis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
