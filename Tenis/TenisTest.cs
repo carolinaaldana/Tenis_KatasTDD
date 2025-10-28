@@ -25,6 +25,18 @@ public class TenisTest
         // Assert
         Assert.Equal(esperado, resultado);
     }
+    
+    [Theory]
+    [InlineData(3, 3, "Iguales")]
+    [InlineData(6, 6, "Iguales")]
+    public void Si_CadaJugadorTieneAlMenos3_Y_AmbosTienenLosMismos_Iguales(int puntosJugador1, int puntosJugador2, string esperado )
+    {
+        // Act
+        var resultado = CalcularPuntaje(puntosJugador1, puntosJugador2);
+        
+        // Assert
+        Assert.Equal(esperado, resultado);
+    }
 
     private string CalcularPuntaje(int puntosJugador1, int puntosJugador2)
     {
