@@ -27,9 +27,9 @@ public class TenisTest
     }
     
     [Theory]
-    [InlineData(3, 3, "Iguales")]
-    [InlineData(6, 6, "Iguales")]
-    public void Si_CadaJugadorTieneAlMenos3_Y_AmbosTienenLosMismos_Iguales(int puntosJugador1, int puntosJugador2, string esperado )
+    [InlineData(3, 3, "Deuce")]
+    [InlineData(6, 6, "Deuce")]
+    public void Si_CadaJugadorTieneAlMenos3_Y_AmbosTienenLosMismos_Deuce(int puntosJugador1, int puntosJugador2, string esperado )
     {
         // Act
         var resultado = CalcularPuntaje(puntosJugador1, puntosJugador2);
@@ -39,8 +39,8 @@ public class TenisTest
     }
     
     [Theory]
-    [InlineData(0, 1, "Amor-Quince")]
-    [InlineData(1, 2, "Quince-Treinta")]
+    [InlineData(0, 1, "Love-Fifteen")]
+    [InlineData(1, 2, "Fifteen-Thirty")]
     public void SiEsJuegoNormal(int puntosJugador1, int puntosJugador2, string esperado )
     {
         // Act
@@ -49,9 +49,10 @@ public class TenisTest
         // Assert
         Assert.Equal(esperado, resultado);
     }
-
+   
     private string CalcularPuntaje(int puntosJugador1, int puntosJugador2)
     {
+        // Victoria: cualquier jugador mínimo 4 y diferencia de 2 o más
         if (puntosJugador1 >= 4 || puntosJugador2 >= 4)
         {
             int diferencia = puntosJugador1 - puntosJugador2;
@@ -60,26 +61,29 @@ public class TenisTest
             if (diferencia <= -2) return "Jugador 2 gana";
         }
         
-        if (puntosJugador1 >= 3 || puntosJugador2 >= 3)
-            return ObtenerResultadoDeuce(puntosJugador1, puntosJugador2);
+        // Ventaja: cada jugador mínimo 3 y diferencia de 1
+        // Deuce: cada jugador mínimo 3 y diferencia de 0
+        if (puntosJugador1 >= 3 && puntosJugador2 >= 3)
+            return ObtenerVentajaODeuce(puntosJugador1, puntosJugador2);
         
+        //Juego normal: ambos tienen menos de 4 puntos
         return ObtenerPuntajeNormal(puntosJugador1, puntosJugador2);
     }
     
-    private string ObtenerResultadoDeuce(int puntosJugador1, int puntosJugador2)
+    private string ObtenerVentajaODeuce(int puntosJugador1, int puntosJugador2)
     {
         int diferencia = puntosJugador1 - puntosJugador2;
         return diferencia switch
         {
             1 => "Ventaja jugador 1",
             -1 => "Ventaja jugador 2",
-            _ => "Iguales"
+            _ => "Deuce"
         };
     }
     
     private string ObtenerPuntajeNormal(int puntosJugador1, int puntosJugador2)
     {
-        string[] valores = { "Amor", "Quince", "Treinta", "Cuarenta" };
+        string[] valores = { "Love", "Fifteen", "Thirty", "Forty" };
         return $"{valores[puntosJugador1]}-{valores[puntosJugador2]}";
     }
     
